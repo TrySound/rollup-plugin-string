@@ -1,6 +1,6 @@
 # rollup-plugin-string
 
-Convert any file to string exported with ES6 modules
+Import text files as strings
 
 ```js
 import tpl from './tpl.html';

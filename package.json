@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-string",
   "version": "1.0.0",
-  "description": "Convert any file to string exported with ES6 modules",
+  "description": "Import text files as strings",
   "main": "dist/rollup-plugin-string.cjs.js",
   "jsnext:main": "dist/rollup-plugin-string.es6.js",
   "files": [
