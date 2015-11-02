@@ -1,0 +1,38 @@
+{
+  "name": "rollup-plugin-string",
+  "version": "1.0.0",
+  "description": "Convert any file to string exported with ES6 modules",
+  "main": "dist/rollup-plugin-string.cjs.js",
+  "jsnext:main": "dist/rollup-plugin-string.es6.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "rollup": "^0.20.3",
+    "rollup-plugin-babel": "^1.0.0"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "test": "mocha",
+    "pretest": "npm run build",
+    "prepublish": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrySound/rollup-plugin-string.git"
+  },
+  "keywords": [
+    "stringify",
+    "string",
+    "rollup-plugin",
+    "template"
+  ],
+  "author": "Bogdan Chadkin <trysound@yandex.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TrySound/rollup-plugin-string/issues"
+  },
+  "homepage": "https://github.com/TrySound/rollup-plugin-string#readme"
+}
