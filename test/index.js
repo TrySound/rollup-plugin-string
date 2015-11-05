@@ -1,12 +1,11 @@
 var assert = require('assert');
 var rollup = require('rollup');
-var path = require('path');
 var string = require('..');
 
 process.chdir(__dirname);
 
-describe('rollup-plugin-string', function () {
-	it('converts string', function () {
+describe('rollup-plugin-string', function (t) {
+	it('should import string', function () {
 		return rollup.rollup({
 			entry: 'samples/basic/main.js',
 			plugins: [
@@ -14,10 +13,8 @@ describe('rollup-plugin-string', function () {
 					extensions: ['.html', '.css']
 				})
 			]
-		}).then( function ( bundle ) {
-			var generated = bundle.generate();
-			var code = generated.code;
-
+		}).then(function (bundle) {
+			var code = bundle.generate().code;
 			var fn = new Function('assert', code);
 			fn(assert);
 		});

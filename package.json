@@ -2,8 +2,8 @@
   "name": "rollup-plugin-string",
   "version": "1.0.0",
   "description": "Import text files as strings",
-  "main": "dist/rollup-plugin-string.cjs.js",
-  "jsnext:main": "dist/rollup-plugin-string.es6.js",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "files": [
     "src",
     "dist"
@@ -14,9 +14,9 @@
     "rollup-plugin-babel": "^1.0.0"
   },
   "scripts": {
-    "build": "node build.js",
-    "test": "mocha",
+    "build": "rollup -c",
     "pretest": "npm run build",
+    "test": "mocha",
     "prepublish": "npm test"
   },
   "repository": {
@@ -24,9 +24,9 @@
     "url": "git+https://github.com/TrySound/rollup-plugin-string.git"
   },
   "keywords": [
+    "rollup-plugin",
     "stringify",
     "string",
-    "rollup-plugin",
     "template"
   ],
   "author": "Bogdan Chadkin <trysound@yandex.ru>",
