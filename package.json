@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Import text files as strings",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
