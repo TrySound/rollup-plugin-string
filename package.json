@@ -9,14 +9,14 @@
     "dist"
   ],
   "devDependencies": {
-    "mocha": "^2.3.3",
+    "ava": "^0.4.0",
     "rollup": "^0.20.3",
     "rollup-plugin-babel": "^1.0.0"
   },
   "scripts": {
     "build": "rollup -c",
     "pretest": "npm run build",
-    "test": "mocha",
+    "test": "ava",
     "prepublish": "npm test"
   },
   "repository": {
