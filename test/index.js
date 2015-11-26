@@ -2,8 +2,6 @@ import test from 'ava';
 import { rollup } from 'rollup';
 import string from '..';
 
-process.chdir(__dirname);
-
 test(t => {
 	return rollup({
 		entry: 'samples/basic/main.js',
