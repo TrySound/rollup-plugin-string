@@ -22,9 +22,9 @@ import string from 'rollup-plugin-string';
 rollup({
 	entry: 'main.js',
 	plugins: [
-		string([
+		string({
 			extensions: ['.html']
-		])
+		})
 	]
 });
 ```
