@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-string",
   "version": "1.0.1",
-  "description": "Import text files as strings",
+  "description": "Converts text files to modules",
   "main": "dist/rollup-plugin-string.js",
   "jsnext:main": "dist/rollup-plugin-string.mjs",
   "files": [
