@@ -1,4 +1,4 @@
-# rollup-plugin-string
+# rollup-plugin-string [![Build Status][https://travis-ci.org/TrySound/rollup-plugin-string.svg]][https://travis-ci.org/TrySound/rollup-plugin-string]
 
 Converts text files to modules:
 
