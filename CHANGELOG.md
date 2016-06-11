@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+* Remove ext option in favour of include/exclude convention
+
 ## 1.0.1
 
 * Use rollup cli and rollup.config.js

@@ -1,13 +1,13 @@
 # rollup-plugin-string
 
-Import text files as strings
+Converts text files to modules:
 
 ```js
 import tpl from './tpl.html';
 console.log( `Template for render: ${tpl}` );
 ```
 
-## Install
+## Installation
 
 ```sh
 npm i rollup-plugin-string -D
@@ -23,19 +23,15 @@ rollup({
 	entry: 'main.js',
 	plugins: [
 		string({
-			extensions: ['.html']
+			// Required to be specified
+			include: '**/*.html',
+
+			// Undefined by default
+			exclude: ['**/index.html']
 		})
 	]
 });
 ```
-
-## Options
-
-### extensions
-
-Required. Type: `array`
-
-Specifies which files should be converted to string
 
 # License
 
