@@ -1,10 +1,16 @@
-import babel from 'rollup-plugin-babel';
+import buble from 'rollup-plugin-buble';
 
 export default {
-	entry: 'src/index.js',
-	plugins: [babel({
-		presets: ['es2015-rollup']
-	})],
-	format: 'cjs',
-	dest: 'dist/index.js'
+	entry: 'index.js',
+	plugins: [buble()],
+	targets: [
+		{
+			format: 'cjs',
+			dest: 'dist/rollup-plugin-string.js'
+		},
+		{
+			format: 'es6',
+			dest: 'dist/rollup-plugin-string.mjs'
+		}
+	]
 };
