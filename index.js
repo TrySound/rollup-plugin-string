@@ -10,7 +10,10 @@ export default function string(opts = {}) {
 	return {
 		transform(code, id) {
 			if (filter(id)) {
-				return `export default ${JSON.stringify(code)};`;
+				return {
+					code: `export default ${JSON.stringify(code)};`,
+					map: { mappings: '' }
+				};
 			}
 		}
 	};
