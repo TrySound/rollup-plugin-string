@@ -8,6 +8,8 @@ export default function string(opts = {}) {
 	const filter = createFilter(opts.include, opts.exclude);
 
 	return {
+		name: 'string',
+
 		transform(code, id) {
 			if (filter(id)) {
 				return {
