@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-string",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Converts text files to modules",
   "main": "dist/rollup-plugin-string.js",
   "jsnext:main": "dist/rollup-plugin-string.mjs",
