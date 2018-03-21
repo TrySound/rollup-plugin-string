@@ -12,6 +12,7 @@ export default function string(opts = {}) {
 
 		transform(code, id) {
 			if (filter(id)) {
+                code = opts.process ? opts.process(code, id) : code;
 				return {
 					code: `export default ${JSON.stringify(code)};`,
 					map: { mappings: '' }
