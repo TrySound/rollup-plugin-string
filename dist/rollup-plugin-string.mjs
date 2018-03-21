@@ -1,23 +1,27 @@
 import { createFilter } from 'rollup-pluginutils';
 
-export default function string(opts = {}) {
+function string(opts) {
+	if ( opts === void 0 ) opts = {};
+
 	if (!opts.include) {
 		throw Error('include option should be specified');
 	}
 
-	const filter = createFilter(opts.include, opts.exclude);
+	var filter = createFilter(opts.include, opts.exclude);
 
 	return {
 		name: 'string',
 
-		transform(code, id) {
+		transform: function transform(code, id) {
 			if (filter(id)) {
                 code = opts.process ? opts.process(code, id) : code;
 				return {
-					code: `export default ${JSON.stringify(code)};`,
+					code: ("export default " + (JSON.stringify(code)) + ";"),
 					map: { mappings: '' }
 				};
 			}
 		}
 	};
 }
+
+export default string;
