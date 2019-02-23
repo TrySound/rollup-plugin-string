@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-string",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Converts text files to modules",
   "main": "index.js",
   "files": [
