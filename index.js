@@ -1,6 +1,6 @@
-import { createFilter } from 'rollup-pluginutils';
+const { createFilter } = require('rollup-pluginutils');
 
-export default function string(opts = {}) {
+function string(opts = {}) {
 	if (!opts.include) {
 		throw Error('include option should be specified');
 	}
@@ -20,3 +20,5 @@ export default function string(opts = {}) {
 		}
 	};
 }
+
+module.exports = string;
