@@ -3,8 +3,8 @@
 Converts text files to modules:
 
 ```js
-import tpl from './tpl.html';
-console.log( `Template for render: ${tpl}` );
+import tpl from "./tpl.html";
+console.log(`Template for render: ${tpl}`);
 ```
 
 ## Installation
@@ -16,20 +16,20 @@ npm i rollup-plugin-string -D
 ## Usage
 
 ```js
-import { rollup } from 'rollup';
-import string from 'rollup-plugin-string';
+import { rollup } from "rollup";
+import string from "rollup-plugin-string";
 
 rollup({
-	entry: 'main.js',
-	plugins: [
-		string({
-			// Required to be specified
-			include: '**/*.html',
+  entry: "main.js",
+  plugins: [
+    string({
+      // Required to be specified
+      include: "**/*.html",
 
-			// Undefined by default
-			exclude: ['**/index.html']
-		})
-	]
+      // Undefined by default
+      exclude: ["**/index.html"]
+    })
+  ]
 });
 ```
 
