@@ -4,36 +4,37 @@ const { string } = require("../");
 
 process.chdir("test");
 
-function makeBundle(options, stringOptions) {
-  options.plugins = [string(stringOptions)];
-  return rollup(options);
-}
-
 describe("rollup-plugin-string", () => {
   it("should stringify importing template", () => {
-    return makeBundle(
-      { entry: "fixtures/basic.js" },
-      { include: "**/*.html" }
-    ).then(bundle => {
-      const { code } = bundle.generate({ format: "iife", moduleName: "tpl" });
-      new Function("assert", code)(assert);
-    });
+    return rollup({
+      input: "fixtures/basic.js",
+      plugins: [string({ include: "**/*.html" })]
+    })
+      .then(bundle => bundle.generate({ format: "iife", moduleName: "tpl" }))
+      .then(({ code }) => {
+        new Function("assert", code)(assert);
+      });
   });
 
   it("should output empty sourcemap", () => {
-    return makeBundle(
-      { entry: "fixtures/basic.js" },
-      { include: "**/*.html" }
-    ).then(bundle => {
-      const { code, map } = bundle.generate({ sourceMap: true });
-      assert.ok(code);
-      assert.ok(map);
-    });
+    return rollup({
+      input: "fixtures/basic.js",
+      plugins: [string({ include: "**/*.html" })]
+    })
+      .then(bundle => bundle.generate({ format: "esm", sourceMap: true }))
+      .then(({ output }) => {
+        const [{ code, map }] = output;
+        assert.ok(code);
+        assert.ok(map == null);
+      });
   });
 
   it("throws when include is not specified", () => {
     assert.throws(() => {
-      makeBundle({ entry: "fixtures/basic.js" });
+      rollup({
+        input: "fixtures/basic.js",
+        plugins: [string()]
+      });
     }, /include option should be specified/);
   });
 });
