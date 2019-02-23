@@ -17,7 +17,7 @@ npm i rollup-plugin-string -D
 
 ```js
 import { rollup } from "rollup";
-import string from "rollup-plugin-string";
+import { string } from "rollup-plugin-string";
 
 rollup({
   entry: "main.js",

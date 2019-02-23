@@ -1,6 +1,6 @@
-var assert = require("assert");
-var { rollup } = require("rollup");
-var string = require("../");
+const assert = require("assert");
+const { rollup } = require("rollup");
+const { string } = require("../");
 
 process.chdir("test");
 
