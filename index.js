@@ -12,8 +12,12 @@ function string(opts = {}) {
 
     transform(code, id) {
       if (filter(id)) {
+        code = JSON.stringify(code);
+        if (opts.replacePattern && opts.replacement) {
+          code = code.replace(opts.replacePattern, opts.replacement);
+        }
         return {
-          code: `export default ${JSON.stringify(code)};`,
+          code: `export default ${code};`,
           map: { mappings: "" }
         };
       }

@@ -23,11 +23,17 @@ rollup({
   entry: "main.js",
   plugins: [
     string({
-      // Required to be specified
+      // target files
       include: "**/*.html",
 
-      // Undefined by default
-      exclude: ["**/index.html"]
+      // [optional] excluded files
+      exclude: ["**/index.html"],
+
+      // [optional] replace pattern (regexp|substr)
+      replacePattern: '/n',
+
+      // [optional] replacement (newSubstr|function)
+      replacement: ''
     })
   ]
 });
