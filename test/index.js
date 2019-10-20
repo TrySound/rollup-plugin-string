@@ -11,8 +11,23 @@ describe("rollup-plugin-string", () => {
       plugins: [string({ include: "**/*.html" })]
     })
       .then(bundle => bundle.generate({ format: "iife", moduleName: "tpl" }))
-      .then(({ code }) => {
-        new Function("assert", code)(assert);
+      .then(({ output }) => {
+        assert.equal(output[0].code.match(/(?<=tpl = ").+?(?=;)/g),
+          `<section class=\\"section\\">\\n\\t<article class='article'>Article 1</article>` + 
+          `\\n\\t<article class='article'>Article 2</article>\\n</section>\\n"`);
+      });
+  });
+
+  it("should modify importing template", () => {
+    return rollup({
+      input: "fixtures/basic.js",
+      plugins: [string({ include: "**/*.html", modify: s => s.replace(/\\n+(\\t)*/g, '') })]
+    })
+      .then(bundle => bundle.generate({ format: "iife", moduleName: "tpl" }))
+      .then(({ output }) => {
+        assert.equal(output[0].code.match(/(?<=tpl = ").+?(?=;)/g),
+          `<section class=\\"section\\"><article class='article'>Article 1</article>` + 
+          `<article class='article'>Article 2</article></section>"`);
       });
   });
 

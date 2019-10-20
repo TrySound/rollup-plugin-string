@@ -27,7 +27,10 @@ rollup({
       include: "**/*.html",
 
       // Undefined by default
-      exclude: ["**/index.html"]
+      exclude: ["**/index.html"],
+
+      // Undefined by default
+      modify: s => s.replace(/\\n+(\\t)*/g, '')
     })
   ]
 });
