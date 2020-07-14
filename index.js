@@ -21,4 +21,6 @@ function string(opts = {}) {
   };
 }
 
-exports.string = string;
+//Add circl deb for backward compat to your old syntax example import { string }
+string.string = string
+exports = string;
